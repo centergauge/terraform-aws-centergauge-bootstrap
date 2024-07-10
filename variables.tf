@@ -9,7 +9,7 @@ variable "EnableSelfUpdate" {
 }
 variable "external_id" {
   type = string
-  default = "SGbehgp5-lk4T5wYpjtaE3Q1V9Pu_pAbpuek480guE0"
+  default = ""
 }
 variable "regions" {
   type = string
