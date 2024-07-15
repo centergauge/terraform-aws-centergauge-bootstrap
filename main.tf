@@ -3,7 +3,7 @@ data "aws_caller_identity" "current" {}
 
 resource "aws_cloudformation_stack" "centergauge_bootstrap" {
   name         = "CenterGauge"
-  template_url = var.template_url
+  template_url = local.template_url
 
   parameters = {
     EnableSelfUpdate = var.EnableSelfUpdate
