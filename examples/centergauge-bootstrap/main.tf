@@ -15,7 +15,7 @@ module "centergauge_bootstrap" {
   source = "../../"
 
 #   bootstrap_version = "1.2.23"  # Specify the version of the bootstrap file you want to use. Use "latest" for the latest version.
-  EnableSelfUpdate  = "true"
+  enable_self_update  = "true"
   external_id       = ""
   regions           = "us-east-2"
 }
@@ -25,7 +25,3 @@ output "stack_id" {
   value       = module.centergauge_bootstrap
 }
 
-output "stack_arn" {
-  description = "The ARN of the CloudFormation stack."
-  value       = module.centergauge_bootstrap
-}

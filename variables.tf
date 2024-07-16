@@ -1,5 +1,5 @@
 locals {
-  template_url = var.bootstrap_version == null ? "${var.bucket_url}/bootstrap.yml" : "${var.bucket_url}/bootstrap-${var.bootstrap_version}.yaml"
+  template_url = var.bootstrap_version == null ? "${var.bucket_url}/bootstrap.yaml" : "${var.bucket_url}/bootstrap-${var.bootstrap_version}.yaml"
 }
 
 variable "bootstrap_version" {
