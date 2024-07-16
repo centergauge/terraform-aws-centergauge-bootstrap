@@ -15,17 +15,17 @@ variable "bucket_url" {
 }
 
 variable "enable_self_update" {
-  type    = string
-  default = "true"
+  type        = string
+  default     = "true"
   description = "Grants permissions to allow CenterGauge to update the CenterGauge CloudFormation templates as new updates are available"
 }
 
 variable "external_id" {
-  type    = string
+  type        = string
   description = "Your external identifier for CenterGauge"
 }
 
 variable "regions" {
-  type    = string
+  type        = string
   description = "The regions you want to deploy into"
 }
