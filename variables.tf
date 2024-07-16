@@ -1,28 +1,31 @@
 locals {
-  template_url = var.bootstrap_version == "default" ? "https://centergauge.s3.amazonaws.com/bootstrap.yaml" : "https://centergauge.s3.amazonaws.com/bootstrap-${var.bootstrap_version}.yaml"
+  template_url = var.bootstrap_version == null ? "${var.bucket_url}/bootstrap.yaml" : "${var.bucket_url}/bootstrap-${var.bootstrap_version}.yaml"
 }
 
 variable "bootstrap_version" {
   type        = string
-  description = "Version of the bootstrap file. Use 'latest' for the latest version."
-  default     = "latest"
+  description = "Version of the bootstrap file. Do not set for the latest version."
+  default     = null
 }
 
-variable "template_url" {
+variable "bucket_url" {
   type        = string
-  default     = "https://centergauge.s3.amazonaws.com/bootstrap.yaml"
-  description = "CloudFormation template url for bootstrapping CenterGauge"
+  default     = "https://centergauge.s3.amazonaws.com"
+  description = "URL to the S3 bucket holding the CloudFormation templates"
 }
 
-variable "EnableSelfUpdate" {
+variable "enable_self_update" {
   type    = string
   default = "true"
+  description = "Grants permissions to allow CenterGauge to update the CenterGauge CloudFormation templates as new updates are available"
 }
+
 variable "external_id" {
   type    = string
-  default = ""
+  description = "Your external identifier for CenterGauge"
 }
+
 variable "regions" {
   type    = string
-  default = "us-east-2, us-east-1"
+  description = "The regions you want to deploy into"
 }
