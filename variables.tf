@@ -8,21 +8,24 @@ variable "bootstrap_version" {
   default     = null
 }
 
-variable "template_url" {
+variable "bucket_url" {
   type        = string
-  default     = "https://centergauge.s3.amazonaws.com/bootstrap.yaml"
-  description = "CloudFormation template url for bootstrapping CenterGauge"
+  default     = "https://centergauge.s3.amazonaws.com"
+  description = "URL to the S3 bucket holding the CloudFormation templates"
 }
 
 variable "enable_self_update" {
   type    = string
   default = "true"
+  description = "Grants permissions to allow CenterGauge to update the CenterGauge CloudFormation templates as new updates are available"
 }
+
 variable "external_id" {
   type    = string
-  default = ""
+  description = "Your external identifier for CenterGauge"
 }
+
 variable "regions" {
   type    = string
-  default = "us-east-2, us-east-1"
+  description = "The regions you want to deploy into"
 }
