@@ -1,5 +1,5 @@
 locals {
-  template_url = var.bootstrap_version == "latest" ? "https://centergauge.s3.amazonaws.com/bootstrap-latest.yaml" : "https://centergauge.s3.amazonaws.com/bootstrap-${var.bootstrap_version}.yaml"
+  template_url = var.bootstrap_version == "default" ? "https://centergauge.s3.amazonaws.com/bootstrap.yaml" : "https://centergauge.s3.amazonaws.com/bootstrap-${var.bootstrap_version}.yaml"
 }
 
 variable "bootstrap_version" {
