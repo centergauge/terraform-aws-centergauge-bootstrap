@@ -6,7 +6,7 @@ resource "aws_cloudformation_stack" "centergauge_bootstrap" {
   template_url = local.template_url
 
   parameters = {
-    EnableSelfUpdate = var.EnableSelfUpdate
+    EnableSelfUpdate = var.enable_self_update
     ExternalId       = var.external_id
     Regions          = var.regions
   }

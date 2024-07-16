@@ -1,11 +1,11 @@
 locals {
-  template_url = var.bootstrap_version == "default" ? "https://centergauge.s3.amazonaws.com/bootstrap.yaml" : "https://centergauge.s3.amazonaws.com/bootstrap-${var.bootstrap_version}.yaml"
+  template_url = var.bootstrap_version == null ? "${var.bucket_url}/bootstrap.yml" : "${var.bucket_url}/bootstrap-${var.bootstrap_version}.yaml"
 }
 
 variable "bootstrap_version" {
   type        = string
-  description = "Version of the bootstrap file. Use 'latest' for the latest version."
-  default     = "latest"
+  description = "Version of the bootstrap file. Do not set for the latest version."
+  default     = null
 }
 
 variable "template_url" {
@@ -14,7 +14,7 @@ variable "template_url" {
   description = "CloudFormation template url for bootstrapping CenterGauge"
 }
 
-variable "EnableSelfUpdate" {
+variable "enable_self_update" {
   type    = string
   default = "true"
 }
