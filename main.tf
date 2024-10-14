@@ -9,6 +9,7 @@ resource "aws_cloudformation_stack" "centergauge_bootstrap" {
     EnableSelfUpdate = var.enable_self_update
     ExternalId       = var.external_id
     Regions          = var.regions
+    VigilEdition     = var.vigil_edition
   }
   capabilities = [
     "CAPABILITY_IAM",

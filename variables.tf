@@ -29,3 +29,9 @@ variable "regions" {
   type        = string
   description = "The regions you want to deploy into"
 }
+
+variable "vigil_edition" {
+  type        = string
+  description = "Vigil Edition to Deploy. Allowed Values are Lite or Pro"
+  default     = "Lite"
+}

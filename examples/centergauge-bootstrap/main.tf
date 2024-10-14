@@ -18,6 +18,8 @@ module "centergauge_bootstrap" {
   enable_self_update  = "true"
   external_id       = ""
   regions           = "us-east-2"
+  vigil_edition     = "Lite"
+
 }
 
 output "stack_id" {
